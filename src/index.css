@@ -91,7 +91,7 @@ body {
   font-weight: 600;
   transition: color 0.3s ease;
   padding: 0.5rem 1.5rem;
-  border: 2px solid var(--color-light);
+  /* border: 2px solid var(--color-light); */
   border-radius: 4px;
 }
 
@@ -104,11 +104,7 @@ body {
 /* Main Content */
 .main-content {
   flex: 1;
-  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  margin-top: 100px;
   will-change: transform, opacity;
 }
 
@@ -156,6 +152,32 @@ body {
   opacity: 0.8;
 }
 
+/* Page Info Component */
+.page-info {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  color: var(--color-light);
+  font-size: 1.2rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.page-info-left {
+  text-transform: capitalize;
+}
+
+.page-info-right {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
 /* Navbar on Home - keeps same style as other pages */
 
 /* Contact Page Specific */
@@ -190,6 +212,105 @@ body {
   background-color: rgba(234, 233, 231, 0.1);
   border-radius: 8px;
   text-align: center;
+}
+
+.books-page-section {
+  border-bottom: 10px solid rgb(51, 51, 51, 0.5);
+}
+
+/* Books Page Sections */
+.books-hero-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light);
+  padding: 2rem;
+}
+
+.book-hero-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 80vh;
+}
+
+/* Second Section - 3 Columns */
+.books-section-two {
+  background-color: #8e8c9c;
+  padding: 3rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.books-grid-3col {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.book-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.book-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 400px;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-image {
+  transform: scale(1.05);
+}
+
+/* Third Section - 2 Columns */
+.books-section-three {
+  background-color: var(--color-background);
+  padding: 3rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.books-grid-2col {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.books-section-two .book-card,
+.books-section-three .book-card {
+  min-height: 350px;
+}
+
+.page-divider {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-border);
+  margin: 2rem 0;
 }
 
 /* Menu Page Styles */
@@ -270,5 +391,34 @@ body {
   .menu-link {
     font-size: 2rem;
     padding: 1rem 0;
+  }
+
+  .page-info {
+    padding: 1.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .page-info-right {
+    color: var(--color-light);
+    letter-spacing: 1px;
+  }
+
+  /* Books page responsive */
+  .books-grid-3col {
+    grid-template-columns: 1fr;
+  }
+
+  .books-grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .books-section-two,
+  .books-section-three {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .book-card {
+    min-height: 250px;
   }
 }

@@ -5,7 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { Navbar, PageTransition } from "./components";
+import { Navbar, PageTransition, PageInfo } from "./components";
 import { Home, About, Books, Authors, Contacts, Menu } from "./pages";
 
 function AppContent() {
@@ -74,6 +74,7 @@ function AppContent() {
           />
         </Routes>
       </AnimatePresence>
+      <PageInfo />
     </div>
   );
 }
