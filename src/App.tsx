@@ -6,7 +6,15 @@ import {
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Navbar, PageTransition, PageInfo } from "./components";
-import { Home, About, Books, Authors, Contacts, Menu } from "./pages";
+import {
+  Home,
+  About,
+  Books,
+  Authors,
+  Contacts,
+  Menu,
+  BookDetail,
+} from "./pages";
 
 function AppContent() {
   const location = useLocation();
@@ -69,6 +77,14 @@ function AppContent() {
             element={
               <PageTransition>
                 <Menu />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/books/:id"
+            element={
+              <PageTransition>
+                <BookDetail />
               </PageTransition>
             }
           />

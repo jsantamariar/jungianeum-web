@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   heroBook,
   secondSectionBooks,
@@ -10,11 +11,13 @@ function Books() {
       {/* Hero Section - Full viewport with single book */}
       <section className="books-page-section books-hero-section">
         <div className="book-hero-container">
-          <img
-            src={heroBook.image}
-            alt={heroBook.title}
-            className="book-hero-image"
-          />
+          <Link to={`/books/${heroBook.id}`} className="book-hero-link">
+            <img
+              src={heroBook.image}
+              alt={heroBook.title}
+              className="book-hero-image"
+            />
+          </Link>
         </div>
       </section>
 
@@ -22,9 +25,15 @@ function Books() {
       <section className="books-page-section books-section-two">
         <div className="books-grid-3col">
           {secondSectionBooks.map((book) => (
-            <div key={book.id} className="book-card">
-              <img src={book.image} alt={book.title} className="book-image" />
-            </div>
+            <Link
+              key={book.id}
+              to={`/books/${book.id}`}
+              className="book-card-link"
+            >
+              <div className="book-card">
+                <img src={book.image} alt={book.title} className="book-image" />
+              </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -33,9 +42,15 @@ function Books() {
       <section className="books-page-section books-section-three">
         <div className="books-grid-2col">
           {thirdSectionBooks.map((book) => (
-            <div key={book.id} className="book-card">
-              <img src={book.image} alt={book.title} className="book-image" />
-            </div>
+            <Link
+              key={book.id}
+              to={`/books/${book.id}`}
+              className="book-card-link"
+            >
+              <div className="book-card">
+                <img src={book.image} alt={book.title} className="book-image" />
+              </div>
+            </Link>
           ))}
         </div>
       </section>

@@ -1,17 +1,34 @@
+import { authorsByLetter } from "../constants/authors";
+
 function Authors() {
   return (
-    <div className="page-container">
-      <h1>Our Authors</h1>
-      <section>
-        <p>
-          Meet the distinguished authors and scholars who contribute to our
-          mission of advancing the understanding of analytical psychology.
-        </p>
+    <div className="authors-page">
+      <div className="authors-container">
         <div className="authors-grid">
-          {/* Authors will be dynamically loaded here */}
-          <p>Coming soon: Profiles of our acclaimed authors</p>
+          <div className="authors-grid-divider" />
+          {Object.entries(authorsByLetter).map(([letter, authors], idx) => (
+            <>
+              <div key={letter} className="authors-letter-section">
+                <h2 className="authors-letter">{letter}</h2>
+                {authors.length > 0 ? (
+                  <ul className="authors-list">
+                    {authors.map((author, index) => (
+                      <>
+                        <li key={index} className="author-name">
+                          {author}
+                        </li>
+                      </>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="authors-empty"></div>
+                )}
+              </div>
+              {(idx + 1) % 3 === 0 && <div className="authors-grid-divider" />}
+            </>
+          ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 }

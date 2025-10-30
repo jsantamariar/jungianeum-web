@@ -12,7 +12,7 @@ function Navbar() {
           />
         </Link>
         <Link to="/menu" className="nav-menu-button">
-          Menu
+          MENU
         </Link>
       </div>
     </nav>
