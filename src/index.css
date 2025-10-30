@@ -885,6 +885,12 @@ body {
   margin: 2rem 0;
 }
 
+@media (max-width: 768px) {
+  .book-order-button {
+    right: 10px;
+  }
+}
+
 .book-order-button span {
   font-size: 1.1rem;
   font-weight: 900;
