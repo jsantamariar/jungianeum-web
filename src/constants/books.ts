@@ -114,14 +114,16 @@ export const booksData: Book[] = [
   },
   {
     id: 6,
-    title: "Psychosocial Wednesdays Event",
-    image: "/books/psychosocial-wednesdays-event.png",
-    author: "Jungianeum Collective",
-    year: 2023,
+    title: "Association Experiment",
+    image: "/books/association-experiment.png",
+    author: "C.G. Jung",
+    year: 2020,
     description:
-      "A compilation of presentations and discussions from our celebrated weekly psychosocial seminars. Featuring diverse perspectives on contemporary psychological issues and their cultural implications.",
-    pages: 412,
+      "A comprehensive guide to Jung's revolutionary word association technique. This classic text documents the methodology and interpretive framework of one of psychology's most influential diagnostic tools.",
+    pages: 341,
     language: "English",
+    amazonLink:
+      "https://www.amazon.com/-/es/ASSOCIATION-EXPERIMENT-THERAPEUTIC-PRACTICE-Groundbreaking/dp/B0DSFK7P6N/",
   },
   {
     id: 7,
@@ -248,16 +250,14 @@ export const booksData: Book[] = [
   },
   {
     id: 17,
-    title: "Association Experiment",
-    image: "/books/association-experiment.png",
-    author: "C.G. Jung",
-    year: 2020,
+    title: "Psychosocial Wednesdays Event",
+    image: "/books/psychosocial-wednesdays-event.png",
+    author: "Jungianeum Collective",
+    year: 2023,
     description:
-      "A comprehensive guide to Jung's revolutionary word association technique. This classic text documents the methodology and interpretive framework of one of psychology's most influential diagnostic tools.",
-    pages: 341,
+      "A compilation of presentations and discussions from our celebrated weekly psychosocial seminars. Featuring diverse perspectives on contemporary psychological issues and their cultural implications.",
+    pages: 412,
     language: "English",
-    amazonLink:
-      "https://www.amazon.com/-/es/ASSOCIATION-EXPERIMENT-THERAPEUTIC-PRACTICE-Groundbreaking/dp/B0DSFK7P6N/",
   },
   {
     id: 18,

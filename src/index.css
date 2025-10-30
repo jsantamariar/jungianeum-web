@@ -523,7 +523,12 @@ body {
 
 /* Second Section - 3 Columns */
 .books-section-two {
-  background-color: #615f5fcc;
+  background: linear-gradient(
+    90deg,
+    rgba(33, 32, 32, 1) 0%,
+    rgba(71, 66, 66, 1) 18%,
+    rgba(38, 38, 33, 1) 83%
+  );
   padding: 3rem 2rem;
   min-height: 100vh;
   display: flex;
@@ -552,11 +557,18 @@ body {
   height: auto;
   object-fit: contain;
   max-height: 400px;
+  mask-image: linear-gradient(black 95%, transparent);
 }
 
 /* Third Section - 2 Columns */
 .books-section-three {
-  background-color: var(--color-background);
+  background: #212020;
+  background: linear-gradient(
+    90deg,
+    rgba(33, 32, 32, 1) 0%,
+    rgba(31, 28, 28, 1) 45%,
+    rgba(28, 28, 24, 1) 92%
+  );
   padding: 3rem 2rem;
   min-height: 100vh;
   display: flex;
