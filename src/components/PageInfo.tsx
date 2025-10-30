@@ -1,8 +1,9 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { booksData } from "../constants/books";
 
 function PageInfo() {
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const getPageName = (pathname: string) => {
     if (pathname === "/") return "Home";
@@ -28,7 +29,15 @@ function PageInfo() {
 
   return (
     <div className="page-info">
-      <div className="page-info-left">{pageName.toUpperCase()}</div>
+      <div className="page-info-left">
+        {isHomePage ? (
+          <Link to="/books" className="see-more-link">
+            SEE MORE
+          </Link>
+        ) : (
+          pageName.toUpperCase()
+        )}
+      </div>
       <div className="page-info-right">JUNGIANEUM</div>
     </div>
   );

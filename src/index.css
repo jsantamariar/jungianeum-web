@@ -411,7 +411,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 /* Page Info Component */
@@ -428,16 +428,31 @@ body {
   color: var(--color-light);
   font-size: 1.2rem;
   font-weight: 500;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .page-info-left {
   text-transform: capitalize;
+  position: relative;
+  z-index: 101;
 }
 
 .page-info-right {
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+.see-more-link {
+  color: var(--color-light);
+  text-shadow: 10px 10px 20px var(--color-light);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.see-more-link:hover {
+  opacity: 0.9;
 }
 
 /* Navbar on Home - keeps same style as other pages */
