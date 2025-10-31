@@ -91,7 +91,7 @@ body {
 .nav-menu-button {
   text-decoration: none;
   color: var(--color-light);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   transition: color 0.3s ease;
   padding: 0.5rem 1.5rem;
@@ -211,7 +211,7 @@ body {
 }
 
 .authors-letter {
-  font-family: "UnifrakturMaguntia", cursive;
+  font-family: "Imperial Script", cursive;
   font-size: 2rem;
   font-weight: 700;
   color: var(--color-black);
@@ -426,7 +426,7 @@ body {
   align-items: center;
   z-index: 100;
   color: var(--color-light);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   pointer-events: auto;
 }
@@ -486,13 +486,13 @@ body {
 .authors-grid {
   margin-top: 2rem;
   padding: 2rem;
-  background-color: rgba(234, 233, 231, 0.1);
+  background-color: var(--color-border-light);
   border-radius: 8px;
   text-align: center;
 }
 
 .books-page-section {
-  border-bottom: 10px solid rgb(0, 0, 0, 0.8);
+  border-bottom: 10px solid var(--color-border-dark);
 }
 
 /* Books Page Sections */
