@@ -187,7 +187,7 @@ body {
 
 .about-divider {
   width: 100%;
-  height: 4px;
+  height: 2px;
   background-color: var(--color-border-dark);
   margin: 3rem 0;
 }
@@ -244,7 +244,7 @@ body {
 
 .authors-grid-divider {
   grid-column: 1 / -1;
-  height: 4px;
+  height: 2px;
   background-color: var(--color-black);
   margin: 0.5rem 0 1.5rem;
 }
@@ -285,7 +285,7 @@ body {
 
 .contacts-divider {
   width: 100%;
-  height: 4px;
+  height: 2px;
   background-color: var(--color-border-light);
   margin: 3rem 0;
 }
@@ -424,6 +424,288 @@ body {
   margin-bottom: 0.25rem;
 }
 
+/* Newsletter Section */
+.newsletter-section {
+  margin: 4rem 0;
+}
+
+.newsletter-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-light);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.newsletter-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-light);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  width: 100%;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-light);
+  background-color: var(--color-black);
+  border: 2px solid rgba(234, 233, 231, 0.2);
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-light);
+  box-shadow: 0 0 0 3px rgba(234, 233, 231, 0.1);
+}
+
+.newsletter-input::placeholder {
+  color: rgba(234, 233, 231, 0.5);
+}
+
+.newsletter-button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-black);
+  background-color: var(--color-light);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 233, 231, 0.3);
+}
+
+.newsletter-button:active {
+  transform: translateY(0);
+}
+
+.newsletter-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.newsletter-message {
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.newsletter-success {
+  background-color: var(--color-success-background);
+  color: var(--color-success);
+  border: 2px solid var(--color-success);
+}
+
+.newsletter-error {
+  background-color: var(--color-error-background);
+  color: var(--color-error);
+  border: 2px solid var(--color-error);
+}
+
+/* Newsletter Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--color-light);
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-black);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+  z-index: 1;
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
+  color: var(--color-background);
+}
+
+.newsletter-modal-content {
+  padding: 3rem 2.5rem;
+}
+
+.newsletter-modal-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.newsletter-modal-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-black);
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.newsletter-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newsletter-modal-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-modal-input:focus {
+  outline: none;
+  border-color: var(--color-black);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-modal-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.newsletter-modal-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-light);
+  background-color: var(--color-black);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-modal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.newsletter-modal-button:active {
+  transform: translateY(0);
+}
+
+.newsletter-modal-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.newsletter-modal-message {
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.newsletter-modal-success {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #2e7d32;
+  border: 2px solid #4caf50;
+}
+
+.newsletter-modal-error {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #c62828;
+  border: 2px solid #f44336;
+}
+
 /* Home Page Specific */
 .home-page {
   position: fixed;
@@ -500,7 +782,7 @@ body {
   padding: 1.5rem;
   background-color: rgba(234, 233, 231, 0.1);
   border-radius: 8px;
-  border-left: 4px solid var(--color-text-primary);
+  border-left: 2px solid var(--color-text-primary);
 }
 
 .contact-item h3 {
@@ -523,7 +805,7 @@ body {
 }
 
 .books-page-section {
-  border-bottom: 10px solid var(--color-border-dark);
+  border-bottom: 2px solid var(--color-border-dark);
 }
 
 /* Books Page Sections */
@@ -797,6 +1079,38 @@ body {
   .contacts-info-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  /* Newsletter responsive */
+  .newsletter-title {
+    font-size: 1.5rem;
+  }
+
+  .newsletter-description {
+    font-size: 0.95rem;
+  }
+
+  .newsletter-input-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .newsletter-button {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+  }
+
+  /* Newsletter Modal responsive */
+  .newsletter-modal-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .newsletter-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .newsletter-modal-description {
+    font-size: 0.95rem;
   }
 
   .form-label {

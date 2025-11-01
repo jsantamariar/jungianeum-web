@@ -3,3 +3,7 @@ export { default as PageTransition } from "./PageTransition";
 export { default as PageInfo } from "./PageInfo";
 export { default as BookContent } from "./BookContent";
 export { default as BookHero } from "./BookHero";
+export { default as ContactForm } from "./ContactForm";
+export { default as ContactInfo } from "./ContactInfo";
+export { default as Newsletter } from "./Newsletter";
+export { default as NewsletterModal } from "./NewsletterModal";

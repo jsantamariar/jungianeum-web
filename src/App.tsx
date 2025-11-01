@@ -5,7 +5,12 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { Navbar, PageTransition, PageInfo } from "./components";
+import {
+  Navbar,
+  PageTransition,
+  PageInfo,
+  NewsletterModal,
+} from "./components";
 import {
   Home,
   About,
@@ -22,6 +27,7 @@ function AppContent() {
   return (
     <div className="app">
       <Navbar />
+      <NewsletterModal />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route
