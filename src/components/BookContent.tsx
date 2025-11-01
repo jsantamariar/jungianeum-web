@@ -53,21 +53,21 @@ function BookContent({ book }: BookContentProps) {
             <span className="detail-label">Year:</span>
             <span className="detail-value">{year}</span>
           </div>
-          {amazonLink && (
-            <div className="detail-row">
-              <a
-                className="book-order-button"
-                href={amazonLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>Order</span>
-              </a>
-            </div>
-          )}
         </div>
 
-        <div className="book-detail-divider"></div>
+        <div className="book-detail-divider-container">
+          {amazonLink && (
+            <a
+              className="book-order-button"
+              href={amazonLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Order</span>
+            </a>
+          )}
+          <div className="book-detail-divider"></div>
+        </div>
 
         {/* Reviews Section */}
         {reviews && reviews.length > 0 && (
