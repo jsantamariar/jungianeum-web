@@ -1,4 +1,4 @@
-import { ContactForm, ContactInfo } from "../components";
+import { ContactForm, ContactInfo, Newsletter } from "../components";
 
 function Contacts() {
   return (
@@ -19,6 +19,10 @@ function Contacts() {
         <div className="contacts-divider"></div>
 
         <ContactInfo />
+
+        <div className="contacts-divider"></div>
+
+        <Newsletter />
       </div>
     </div>
   );
