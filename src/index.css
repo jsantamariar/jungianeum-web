@@ -472,21 +472,21 @@ body {
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-family: inherit;
-  color: var(--color-light);
-  background-color: var(--color-black);
-  border: 2px solid rgba(234, 233, 231, 0.2);
+  color: var(--color-black);
+  background-color: var(--color-text-primary);
+  border: 2px solid var(--color-border-dark);
   border-radius: 4px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .newsletter-input:focus {
   outline: none;
-  border-color: var(--color-light);
+  border-color: var(--color-border-dark);
   box-shadow: 0 0 0 3px rgba(234, 233, 231, 0.1);
 }
 
 .newsletter-input::placeholder {
-  color: rgba(234, 233, 231, 0.5);
+  color: var(--color-black);
 }
 
 .newsletter-button {
