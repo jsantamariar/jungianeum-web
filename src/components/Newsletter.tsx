@@ -1,28 +1,25 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
+import { useToast } from "../hooks/useToast";
 
 function Newsletter() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "loading">("idle");
+  const { showToast } = useToast();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
 
     try {
-      // Aquí iría la integración con tu servicio de newsletter
-      // Por ahora simulamos el envío
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      setStatus("success");
+      showToast("Thank you for subscribing!", "success");
       setEmail("");
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setStatus("idle"), 5000);
+      setStatus("idle");
     } catch (error) {
-      setStatus("error");
+      showToast("Something went wrong. Please try again.", "error");
+      setStatus("idle");
       console.error("Error:", error);
     }
   };
@@ -54,18 +51,6 @@ function Newsletter() {
               {status === "loading" ? "Subscribing..." : "Subscribe"}
             </button>
           </div>
-
-          {status === "success" && (
-            <div className="newsletter-message newsletter-success">
-              Thank you for subscribing! Check your email for confirmation.
-            </div>
-          )}
-
-          {status === "error" && (
-            <div className="newsletter-message newsletter-error">
-              Something went wrong. Please try again.
-            </div>
-          )}
         </form>
       </div>
     </section>

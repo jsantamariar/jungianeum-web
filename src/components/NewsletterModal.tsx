@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
+import { useToast } from "../hooks/useToast";
 
 function NewsletterModal() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "loading">("idle");
   const [isOpen, setIsOpen] = useState(false);
+  const { showToast } = useToast();
 
   useEffect(() => {
     const hasSeenModal = localStorage.getItem("newsletter-modal-seen");
@@ -35,15 +35,17 @@ function NewsletterModal() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      setStatus("success");
+      showToast("Thank you for subscribing!", "success");
       setEmail("");
+      setStatus("idle");
       localStorage.setItem("newsletter-subscribed", "true");
 
       setTimeout(() => {
         setIsOpen(false);
-      }, 3000);
+      }, 2000);
     } catch (error) {
-      setStatus("error");
+      showToast("Something went wrong. Please try again.", "error");
+      setStatus("idle");
       console.error("Error:", error);
     }
   };
@@ -92,18 +94,6 @@ function NewsletterModal() {
             >
               {status === "loading" ? "Subscribing..." : "Subscribe"}
             </button>
-
-            {status === "success" && (
-              <div className="newsletter-modal-message newsletter-modal-success">
-                Thank you for subscribing! Check your email for confirmation.
-              </div>
-            )}
-
-            {status === "error" && (
-              <div className="newsletter-modal-message newsletter-modal-error">
-                Something went wrong. Please try again.
-              </div>
-            )}
           </form>
         </div>
       </div>

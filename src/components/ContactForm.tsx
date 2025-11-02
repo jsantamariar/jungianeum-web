@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
+import { useToast } from "../hooks/useToast";
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -8,15 +9,12 @@ function ContactForm() {
     subject: "",
     message: "",
   });
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading">("idle");
+  const { showToast } = useToast();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
-    setErrorMessage("");
 
     try {
       const response = await fetch("/api/send-email", {
@@ -31,14 +29,15 @@ function ContactForm() {
         throw new Error("Failed to send message");
       }
 
-      setStatus("success");
+      showToast(
+        "Message sent successfully! We'll get back to you soon.",
+        "success"
+      );
       setFormData({ name: "", email: "", subject: "", message: "" });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setStatus("idle"), 5000);
+      setStatus("idle");
     } catch (error) {
-      setStatus("error");
-      setErrorMessage("Failed to send message. Please try again.");
+      showToast("Failed to send message. Please try again.", "error");
+      setStatus("idle");
       console.error("Error:", error);
     }
   };
@@ -118,16 +117,6 @@ function ContactForm() {
             required
           ></textarea>
         </div>
-
-        {status === "success" && (
-          <div className="form-message form-success">
-            Message sent successfully! We'll get back to you soon.
-          </div>
-        )}
-
-        {status === "error" && (
-          <div className="form-message form-error">{errorMessage}</div>
-        )}
 
         <button
           type="submit"

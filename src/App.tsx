@@ -20,6 +20,7 @@ import {
   Menu,
   BookDetail,
 } from "./pages";
+import { ToastProvider } from "./contexts/ToastContext";
 
 function AppContent() {
   const location = useLocation();
@@ -104,7 +105,9 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <AppContent />
+      <ToastProvider>
+        <AppContent />
+      </ToastProvider>
     </Router>
   );
 }
