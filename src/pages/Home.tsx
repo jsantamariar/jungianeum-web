@@ -1,11 +1,12 @@
 function Home() {
   return (
     <div className="home-page">
-      <div
+      <img
+        src="/example-home-bg.jpg"
+        alt="Jungianeum background"
         className="home-image"
-        style={{
-          backgroundImage: "url(/example-home-bg.jpg)",
-        }}
+        fetchPriority="high"
+        decoding="async"
       />
     </div>
   );

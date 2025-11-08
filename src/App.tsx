@@ -98,7 +98,6 @@ function AppContent() {
           />
         </Routes>
       </AnimatePresence>
-      <PageInfo />
     </div>
   );
 }
@@ -121,6 +120,7 @@ function App() {
     <Router>
       <ToastProvider>
         <Navbar />
+        <PageInfo />
         {isInitialLoading && <LoadingScreen />}
         {showContent && (
           <Suspense fallback={null}>

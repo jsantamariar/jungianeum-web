@@ -1,5 +1,12 @@
+import { memo } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { booksData } from "../constants/books";
+
+const PageInfoRight = memo(() => (
+  <div className="page-info-right">JUNGIANEUM</div>
+));
+
+PageInfoRight.displayName = "PageInfoRight";
 
 function PageInfo() {
   const location = useLocation();
@@ -35,12 +42,12 @@ function PageInfo() {
             SEE MORE
           </Link>
         ) : (
-          pageName.toUpperCase()
+          <span>{pageName.toUpperCase()}</span>
         )}
       </div>
-      <div className="page-info-right">JUNGIANEUM</div>
+      <PageInfoRight />
     </div>
   );
 }
 
-export default PageInfo;
+export default memo(PageInfo);

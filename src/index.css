@@ -66,6 +66,17 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
+  opacity: 0;
+  animation: fadeInNav 1s ease-in-out 1.8s forwards;
+}
+
+@keyframes fadeInNav {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .nav-container {
@@ -821,10 +832,10 @@ body {
 .home-image {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   opacity: 0;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   animation: fadeInImage 1.5s ease-in-out forwards;
 }
 
@@ -852,6 +863,17 @@ body {
   font-size: 1rem;
   font-weight: 500;
   pointer-events: auto;
+  opacity: 0;
+  animation: fadeInPageInfo 1s ease-in-out 2s forwards;
+}
+
+@keyframes fadeInPageInfo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .page-info-left {
@@ -869,12 +891,12 @@ body {
   color: var(--color-light);
   text-decoration: none;
   cursor: pointer;
-  transition: opacity 0.3s ease;
   pointer-events: auto;
+  transition: opacity 0.3s ease;
 }
 
 .see-more-link:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 /* Navbar on Home - keeps same style as other pages */
@@ -1108,13 +1130,7 @@ body {
   }
 
   .page-info {
-    padding: 1.5rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  .page-info-right {
-    color: var(--color-light);
-    letter-spacing: 1px;
+    display: none;
   }
 
   /* Books page responsive */
@@ -1174,7 +1190,7 @@ body {
 
   /* Contacts page responsive */
   .contacts-page {
-    padding: 5rem 1.5rem 3rem;
+    padding: 0.1rem 1.5rem 3rem;
   }
 
   .contacts-title {
