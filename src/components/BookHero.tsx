@@ -9,7 +9,12 @@ function BookHero({ book }: BookHeroProps) {
   return (
     <section className="book-detail-hero">
       <div className="book-detail-image-container">
-        <img src={image} alt={title} className="book-detail-image" />
+        <img
+          src={image}
+          alt={title}
+          className="book-detail-image"
+          loading="lazy"
+        />
       </div>
     </section>
   );

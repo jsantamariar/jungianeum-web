@@ -7,3 +7,4 @@ export { default as ContactForm } from "./ContactForm";
 export { default as ContactInfo } from "./ContactInfo";
 export { default as Newsletter } from "./Newsletter";
 export { default as NewsletterModal } from "./NewsletterModal";
+export { default as LoadingScreen } from "./LoadingScreen";

@@ -16,6 +16,7 @@ function Books() {
               src={heroBook.image}
               alt={heroBook.title}
               className="book-hero-image"
+              loading="lazy"
             />
           </Link>
         </div>
@@ -31,7 +32,12 @@ function Books() {
               className="book-card-link"
             >
               <div className="book-card">
-                <img src={book.image} alt={book.title} className="book-image" />
+                <img
+                  src={book.image}
+                  alt={book.title}
+                  className="book-image"
+                  loading="lazy"
+                />
               </div>
             </Link>
           ))}
@@ -48,7 +54,12 @@ function Books() {
               className="book-card-link"
             >
               <div className="book-card">
-                <img src={book.image} alt={book.title} className="book-image" />
+                <img
+                  src={book.image}
+                  alt={book.title}
+                  className="book-image"
+                  loading="lazy"
+                />
               </div>
             </Link>
           ))}
